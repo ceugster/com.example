@@ -1,0 +1,20 @@
+-buildpath: \
+	osgi.annotation;version='6.0.1',\
+	com.example.eval.api;version='1.0.0',\
+	org.apache.felix.gogo.runtime;version='1.1.2',\
+	org.osgi.service.component.annotations,\
+	org.mozilla.rhino
+-testpath: \
+	osgi.enroute.junit.wrapper,\
+	osgi.enroute.hamcrest.wrapper
+
+Bundle-Version: 0.0.0.${tstamp}
+Private-Package: com.example.eval.rhino.provider
+-runrequires: \
+	bnd.identity;id='com.example.eval.api',\
+	bnd.identity;id='org.apache.felix.gogo.runtime'
+-runbundles: \
+	com.example.eval.api;version=snapshot,\
+	org.apache.felix.gogo.runtime;version='[1.1.2,1.1.3)'
+-runfw: org.apache.felix.framework;version='[6.0.3,6.0.3]'
+-runee: JavaSE-1.8

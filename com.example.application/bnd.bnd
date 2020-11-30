@@ -1,0 +1,3 @@
+-dependson: *
+-fixupmessages: The JAR is empty
+-export: application.bndrun

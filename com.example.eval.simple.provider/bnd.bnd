@@ -1,0 +1,35 @@
+-buildpath: \
+	osgi.annotation;version='6.0.1',\
+	org.osgi.service.component.annotations,\
+	com.example.eval.api;version=latest,\
+	org.apache.felix.gogo.runtime
+-testpath: \
+    biz.aQute.launchpad,\
+    org.osgi.framework,\
+    slf4j.api,\
+    slf4j.simple,\
+    org.osgi.resource,\
+    org.osgi.dto,\
+    org.osgi.util.tracker,\
+    com.example.eval.api, \
+    osgi.enroute.junit.wrapper, \
+    osgi.enroute.hamcrest.wrapper
+        
+Bundle-Version: 1.0.0.${tstamp}
+Private-Package: com.example.eval.simple.provider
+-runfw: org.apache.felix.framework;version='[6.0.3,6.0.3]'
+-runee: JavaSE-1.8
+-runrequires: \
+	bnd.identity;version='latest';id='com.example.eval.api',\
+	bnd.identity;id='org.apache.felix.gogo.runtime',\
+	bnd.identity;id='org.apache.felix.gogo.shell',\
+	bnd.identity;id='org.apache.felix.gogo.command',\
+	bnd.identity;id='org.apache.felix.scr'
+-runbundles: \
+	com.example.eval.api;version=snapshot,\
+	org.apache.felix.gogo.command;version='[1.1.0,1.1.1)',\
+	org.apache.felix.gogo.runtime;version='[1.1.2,1.1.3)',\
+	org.apache.felix.gogo.shell;version='[1.1.2,1.1.3)',\
+	org.apache.felix.scr;version='[2.1.16,2.1.17)',\
+	org.osgi.util.function;version='[1.1.0,1.1.1)',\
+	org.osgi.util.promise;version='[1.1.1,1.1.2)'
